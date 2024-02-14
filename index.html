@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+
+    <link rel="stylesheet" href="./CSS/styling.css"/>
+
+   
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
+
+    <title>Paul Roos Map</title>
+</head>
+<body>
+
+
+
+    <h1>PAUL ROOS:</h1>
+
+    <div id="flag1"></div>
+    <div id="flag2"></div>
+    <div id="flag3"></div>
+
+    <div id="map"></div>
+
+    
+
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
+</body>
+
+<script>
+var map = L.map('map');
+map.setView([-33.9419, 18.8614], 19);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 25, minZoom: 15,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var customIcon = L.icon({
+    iconUrl: './images/display.png',
+    iconSize: [40, 40], // Size of the icon
+    iconAnchor: [20, 40], // Point of the icon which will correspond to marker's location
+    popupAnchor: [0, -40] // Point from which the popup should open relative to the iconAnchor
+});
+
+var customPopupOptions = {
+    maxWidth: "300", // Max width of the popup
+    minWidth: "200", // Min width of the popup
+    maxHeight: "200", // Max height of the popup
+    autoPan: true, // Automatically pan the map to display the popup
+    className: 'custom-popup' // Add a custom class for styling
+};
+
+
+// LPR GEBOU
+let LPRMarker = L.marker([-33.9419,18.8614]).addTo(map)
+    .bindPopup("<h1> LPR </h1>" +
+    "<p>Hierdie aparte akademiese gebou wat voorheen as Laerskool Paul Roos bekendgestaan het, huisves drie indrukwekkende rekenaarsentrums, die bemarkingskantoor en die leerderondersteuningspan. Die skeiding van die hoërskool en laerskool het later tot die totstandkoming van Laerskool Eikestad in 1986 gelei het. </p>"
+    + "<hr> <p>Initially known as Laerskool Paul Roos (LPR), this separate academic building houses three impressive computer centres, the marketing office, and the learner support team. The primary school later split from the high school to officially establish Eikestad Primary in 1986.  </p>"
+    + "<img class='popupimages' src='./images/LPR.jpg'/ height='150px'>", customPopupOptions);
+
+
+//HOOF GEBOU
+let HoofGebouMarker = L.marker([-33.941610,18.862611]).addTo(map)
+.bindPopup("<h1> Paul Roos Hoofgebou | Main Building </h1>" + 
+" <p> Die PRG-hoofgebou is die oorspronklike hoërskoolgebou wat saam met die LPR en die Japie Krige-saal op die huidige skoolperseel in Suidwalstraat gebou is. Talle aanbouings en opknappingswerk is sedertdien gedoen. Die gebou sluit klaskamers, adminkantore, die sportkantoor en die rektorskantoor in. </p> " +
+"<hr><p> The Paul Roos Main Building was the original high school building and was built along with the LPR and the Japie Krige Hall when the school was established at its current location in Suidwalstreet on 27 September 1946. It has, since then, undergone many extensions and renovations. Besides the academic classes, it also houses the administration block, the sport's office and the Rector's office. </p>" 
++ " <img class='popupimages' src='./images/PRG Hoofgebou.jpg'/ height='150px'>", customPopupOptions);
+
+
+// CENTRE
+let PRGCentre = L.marker([-33.942859, 18.861336]).addTo(map)
+.bindPopup("<h1> PRG Sentrum | Centre </h1>" + 
+"<p>Die Paul Roos Sentrum is gebou toe die Japie Krige-saal te klein geword het vir die groot leerdergetalle. Op 20 Maart 2002 is die gebou amptelik deur oudpresident Nelson Mandela geopen.  </p>" +
+"<hr><p>The Paul Roos Centre was commissioned when the Japie Krige Hall became too small to seat the growing number of learners at the school. On the 20 March 2002, the building was declared open by former president, Nelson Mandela.  </p>"
++ "<img class='popupimages' src='./images/PRG Centre.jpg'/ height='150px'>", customPopupOptions);
+
+
+//NOVA KOSHUIS
+let PRGNova = L.marker([-33.941120, 18.863475]).addTo(map)
+.bindPopup("<h1> Prima Nova </h1> " +
+"<p> ’n Vorige koshuis is gesloop en Prima Nova is in 1956 hier gebou. Dié koshuis huisves 157 Graad 8- tot Graad 12-seuns.</p>" +
+" <hr> <p> A previous residence was demolished to build what is now known as Prima Nova (1965). Prima Nova houses 157 boys from Grade 8 to Grade 12. </p>" +
+"<img class='popupimages' src='./images/Prima Nova.jpg'/ height='150px'>", customPopupOptions);
+
+
+//SECUNDA KOSHUIS
+let PRGSecunda = L.marker([-33.941348, 18.863656]).addTo(map)
+.bindPopup("<h1> Secunda Hostel </h1>" +
+"<p>Die nuwe Secunda-koshuis het in 2021 sy deure geopen. Secunda is ’n anneks met 18 beddens onder die bestuur van Prima Nova. </p>" +
+"<hr> <p>The new Secunda residence opened its doors in 2021. Secunda is an 18-bed annex that falls under the management of Prima Nova.  </p>"
++ "<img class='popupimages' src='./images/Secunda.jpg'/ height='150px'>" , customPopupOptions);
+
+
+// PRIMA
+let PRGPrima = L.marker([-33.9405446163602, 18.86462771038144]).addTo(map)
+.bindPopup("<h1> Prima </h1>" + 
+"<p> Prima-koshuis is in 1930 op die Suidwal-skoolterrein gebou en huisves 109 leerders. </p> " +
+"<hr><p> Prima was the first purpose-designed residence on the Suidwal grounds and was built in 1930. It houses 109 learners. </p>" +
+"<img class='popupimages' src='./images/Prima.jpg'/ height='150px'>"
+,customPopupOptions);
+
+
+// Japie Krige Hall
+let JapieKrige = L.marker([-33.941798939373975, 18.86195393855647]).addTo(map)
+.bindPopup("<h1> Japie Krige Saal | Hall </h1>" + 
+"<p> Die ikoniese Japie Krige saal met sy merkwaardige fasade en uitsonderlike vier pilare is in 1945 gebou.   </p>" + 
+"<p> The iconic Japie Krige Hall with its distinct facade, recognisable by its extraordinary four pillars was built in 1945  </p>" +
+"<img class='popupimages' src='./images/Japie Krige Saal.jpg'/ height='150px'>", customPopupOptions);
+
+let Kamer14 = L.marker([-33.941671, 18.862312]).addTo(map)
+.bindPopup("<h1> Kamer 14 </h1>");
+
+
+
+//Current user location
+ if (!navigator.geolocation.getCurrentPosition){
+    console.log("Your browser doesn't support the geolocation feature");
+ } else {
+    setInterval(() => {
+        navigator.geolocation.getCurrentPosition(getPosition)
+    }, 5000)
+    
+ }
+
+ var
+ UserMarker, UserRadius;
+
+ function getPosition(position){
+ console.log(position);
+ var lat = position.coords.latitude;
+ var long = position.coords.longitude;
+ var accuracy = position.coords.accuracy;
+
+ console.log(lat, long, accuracy);
+
+ if (UserMarker){
+    map.removeLayer(UserMarker)
+ }
+
+ if (UserRadius){
+    map.removeLayer(UserRadius)
+ }
+
+  UserMarker = L.marker([lat,long], {icon: customIcon}).addTo(map);
+  UserRadius = L.circle([lat, long], {radius: accuracy}).addTo(map);
+ console.log("It should have added");
+ }
+
+
+
+
+//-33.941610, 18.862611
+
+// L.Routing.control({
+//   waypoints: [
+//     L.latLng(-33.9419, 18.8614),
+//     L.latLng(-33.941610,18.862611)
+//   ]
+// }).addTo(map);
+
+
+
+
+// navigator.geolocation.watchPosition(success,error);
+// let marker;
+
+//  function success(pos){
+   
+//     const lat = pos.coords.latitude;
+//     const lng = pos.coords.longtitude;
+//     // const accuracy = pos.coords.accuracy;
+    
+//     marker = L.marker([lat, lng]).addTo(map);
+//     alert("This code executed");
+ 
+
+//  }
+
+//  function error(err){
+//     if (err.code === 1){
+//         alert("Please allow geolocation access");
+//     } else {
+//         alert("Cannot get current location");
+//     }
+//  }
+
+</script>
+</html>

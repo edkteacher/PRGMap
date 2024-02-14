@@ -1,12 +1,51 @@
-#map { height: 75vh; }
+#map { height: 65vh;
+border: 2px solid black;
+border-radius: 10px;
+    border-color: black;
+ }
 
 h1{
     text-align: center;
     color: maroon;
 }
 
+#flag1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+  background-color: maroon;  
+  height: 33vh;
+  width: 100%;
+}
+
+#flag2{
+    position: absolute;
+    top: 33vh;
+    left: 0;
+    z-index: -100;
+ background-color: yellow;
+ height:  33.33vh;
+ width: 100%;
+
+}
+
+#flag3{
+    position: absolute;
+    top: 66.33vh;
+    left: 0;
+    z-index: -100;
+    background-color: blue;
+    height: 34vh;
+    width: 100%;
+}
+
 .popupimages{
     border: 2px solid black;
     border-radius: 10px;
     border-color: maroon;
+}
+
+.marker{
+    color: beige;
 }

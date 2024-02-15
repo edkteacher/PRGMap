@@ -2,6 +2,8 @@
 
 
 
+
+
 #map-container {
     position: fixed;
     top: 50%;
@@ -9,6 +11,7 @@
     transform: translate(-50%, -50%);
     width: 80%; /* Adjust the width as needed */
     height: 80%; /* Adjust the height as needed */
+    z-index: -1;
 }
 
 
@@ -54,17 +57,25 @@ border-radius: 10px;
     
  }
 
+ .watermarkcontainer{
+    display: flex;
+    justify-content: center;
+ }
+
+
 .watermarkschool{
     position: absolute;
     opacity: 0.25;
     z-index: -1;
-    left: 30%;
     top: 25%;
+    display: flex;
+    justify-content: center;
 
 }
 
  .headingbanner{
     background-color: #880c20;
+    width: 100%;
 
  }
 
@@ -90,6 +101,7 @@ h1{
     background-size: cover;
   height: 100%;
   width: 100%;
+  opacity: 0.85;
 }
 
 /* #flag2{
@@ -128,6 +140,7 @@ h1{
          /* Default popup styles */
         .leaflet-popup-content {
             font-size: 20px;
+            font-family: "Frank Ruhl Libre", serif;
             color: #880c20;  
          }
 

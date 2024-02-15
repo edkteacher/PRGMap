@@ -7,6 +7,7 @@
     crossorigin=""/>
 
 
+    <link rel="icon" href="./images/prglogo.png">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 
@@ -18,20 +19,66 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>Paul Roos Map</title>
 </head>
 <body>
 
 
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <a class="navbar-brand" href="https://paulroos.co.za"><img src="./images/display.png" alt="Logo" height="40" 
+            class="d-inline-block align-top">Paul Roos Gymnasium </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
 
-    <h1>PAUL ROOS:</h1>
+      <br>
+
+    <!-- <h1>PAUL ROOS:</h1> -->
 
     <div id="flag1"></div>
     <div id="flag2"></div>
+
     <div id="flag3"></div>
 
-    <div id="map"></div>
 
+
+    <!-- Map container -->
+    <div id="map-container">
+        <!-- Leaflet map container -->
+        <div id="map"></div>
+    </div>
     
 
 
@@ -63,72 +110,77 @@ var customIcon = L.icon({
 });
 
 var customPopupOptions = {
-    maxWidth: "300", // Max width of the popup
-    minWidth: "200", // Min width of the popup
-    maxHeight: "200", // Max height of the popup
+    maxWidth: "400", // Max width of the popup
+    minWidth: "220", // Min width of the popup
+    maxHeight: "auto", // Max height of the popup
     autoPan: true, // Automatically pan the map to display the popup
+    autoPanPadding: [50, 50], // Padding for the autoPan
     className: 'custom-popup' // Add a custom class for styling
 };
 
 
 // LPR GEBOU
 let LPRMarker = L.marker([-33.9419,18.8614]).addTo(map)
-    .bindPopup("<h1> LPR </h1>" +
-    "<p>Hierdie aparte akademiese gebou wat voorheen as Laerskool Paul Roos bekendgestaan het, huisves drie indrukwekkende rekenaarsentrums, die bemarkingskantoor en die leerderondersteuningspan. Die skeiding van die hoërskool en laerskool het later tot die totstandkoming van Laerskool Eikestad in 1986 gelei het. </p>"
-    + "<hr> <p>Initially known as Laerskool Paul Roos (LPR), this separate academic building houses three impressive computer centres, the marketing office, and the learner support team. The primary school later split from the high school to officially establish Eikestad Primary in 1986.  </p>"
-    + "<img class='popupimages' src='./images/LPR.jpg'/ height='150px'>", customPopupOptions);
+    .bindPopup("<h1> LPR Gebou | Building </h1> <hr>" +
+    "<img class='popupimages' src='./images/LPR.jpg'/ height='150px'>" +
+    " <br> <a href='./Pages/LPR.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
 
 //HOOF GEBOU
-let HoofGebouMarker = L.marker([-33.941610,18.862611]).addTo(map)
+let HoofGebouMarker = L.marker([-33.941483, 18.862473]).addTo(map)
 .bindPopup("<h1> Paul Roos Hoofgebou | Main Building </h1>" + 
-" <p> Die PRG-hoofgebou is die oorspronklike hoërskoolgebou wat saam met die LPR en die Japie Krige-saal op die huidige skoolperseel in Suidwalstraat gebou is. Talle aanbouings en opknappingswerk is sedertdien gedoen. Die gebou sluit klaskamers, adminkantore, die sportkantoor en die rektorskantoor in. </p> " +
-"<hr><p> The Paul Roos Main Building was the original high school building and was built along with the LPR and the Japie Krige Hall when the school was established at its current location in Suidwalstreet on 27 September 1946. It has, since then, undergone many extensions and renovations. Besides the academic classes, it also houses the administration block, the sport's office and the Rector's office. </p>" 
-+ " <img class='popupimages' src='./images/PRG Hoofgebou.jpg'/ height='150px'>", customPopupOptions);
+ " <img class='popupimages' src='./images/PRG Hoofgebou.jpg'/ height='150px'>" +
+ " <br> <a href='./Pages/HoofGebou.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
 
 // CENTRE
 let PRGCentre = L.marker([-33.942859, 18.861336]).addTo(map)
 .bindPopup("<h1> PRG Sentrum | Centre </h1>" + 
-"<p>Die Paul Roos Sentrum is gebou toe die Japie Krige-saal te klein geword het vir die groot leerdergetalle. Op 20 Maart 2002 is die gebou amptelik deur oudpresident Nelson Mandela geopen.  </p>" +
-"<hr><p>The Paul Roos Centre was commissioned when the Japie Krige Hall became too small to seat the growing number of learners at the school. On the 20 March 2002, the building was declared open by former president, Nelson Mandela.  </p>"
-+ "<img class='popupimages' src='./images/PRG Centre.jpg'/ height='150px'>", customPopupOptions);
+"<img class='popupimages' src='./images/PRG Centre.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/PRGCentre.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
 
 //NOVA KOSHUIS
 let PRGNova = L.marker([-33.941120, 18.863475]).addTo(map)
 .bindPopup("<h1> Prima Nova </h1> " +
-"<p> ’n Vorige koshuis is gesloop en Prima Nova is in 1956 hier gebou. Dié koshuis huisves 157 Graad 8- tot Graad 12-seuns.</p>" +
-" <hr> <p> A previous residence was demolished to build what is now known as Prima Nova (1965). Prima Nova houses 157 boys from Grade 8 to Grade 12. </p>" +
-"<img class='popupimages' src='./images/Prima Nova.jpg'/ height='150px'>", customPopupOptions);
+"<img class='popupimages' src='./images/Prima Nova.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Nova.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
 
 //SECUNDA KOSHUIS
 let PRGSecunda = L.marker([-33.941348, 18.863656]).addTo(map)
 .bindPopup("<h1> Secunda Hostel </h1>" +
-"<p>Die nuwe Secunda-koshuis het in 2021 sy deure geopen. Secunda is ’n anneks met 18 beddens onder die bestuur van Prima Nova. </p>" +
-"<hr> <p>The new Secunda residence opened its doors in 2021. Secunda is an 18-bed annex that falls under the management of Prima Nova.  </p>"
-+ "<img class='popupimages' src='./images/Secunda.jpg'/ height='150px'>" , customPopupOptions);
+ "<img class='popupimages' src='./images/Secunda.jpg'/ height='150px'>" +
+ "<br> <a href='./Pages/secunda.html'><button class='button-44' role='button'>View Info</button></a>" , customPopupOptions);
 
 
 // PRIMA
 let PRGPrima = L.marker([-33.9405446163602, 18.86462771038144]).addTo(map)
 .bindPopup("<h1> Prima </h1>" + 
-"<p> Prima-koshuis is in 1930 op die Suidwal-skoolterrein gebou en huisves 109 leerders. </p> " +
-"<hr><p> Prima was the first purpose-designed residence on the Suidwal grounds and was built in 1930. It houses 109 learners. </p>" +
-"<img class='popupimages' src='./images/Prima.jpg'/ height='150px'>"
-,customPopupOptions);
+"<img class='popupimages' src='./images/Prima.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Prima.html'><button class='button-44' role='button'>View Info</button></a>" ,customPopupOptions);
 
 
 // Japie Krige Hall
 let JapieKrige = L.marker([-33.941798939373975, 18.86195393855647]).addTo(map)
 .bindPopup("<h1> Japie Krige Saal | Hall </h1>" + 
-"<p> Die ikoniese Japie Krige saal met sy merkwaardige fasade en uitsonderlike vier pilare is in 1945 gebou.   </p>" + 
-"<p> The iconic Japie Krige Hall with its distinct facade, recognisable by its extraordinary four pillars was built in 1945  </p>" +
-"<img class='popupimages' src='./images/Japie Krige Saal.jpg'/ height='150px'>", customPopupOptions);
+"<img class='popupimages' src='./images/Japie Krige Saal.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/JapieKrige.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
+// Kamer 14
 let Kamer14 = L.marker([-33.941671, 18.862312]).addTo(map)
-.bindPopup("<h1> Kamer 14 </h1>");
+.bindPopup("<h1> Kamer 14 </h1>" +
+"<img class='popupimages' src='./images/Room 14.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Room14.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+// Performance Institute
+let PerformanceInstitute = L.marker([-33.94186362464865, 18.864021447241385]).addTo(map)
+.bindPopup("<h1> Johan J Ferreira Hoë-Prestasiesentrum | High Performance Centre  </h1>" + 
+"<img class='popupimages' src='./images/High Performance Centre inside.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/PerformanceInstitute.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions)
+
+
+
 
 
 
@@ -138,8 +190,8 @@ let Kamer14 = L.marker([-33.941671, 18.862312]).addTo(map)
  } else {
     setInterval(() => {
         navigator.geolocation.getCurrentPosition(getPosition)
-    }, 5000)
-    
+    }, 1000)
+    //Original interval = 5000
  }
 
  var
@@ -165,6 +217,8 @@ let Kamer14 = L.marker([-33.941671, 18.862312]).addTo(map)
   UserRadius = L.circle([lat, long], {radius: accuracy}).addTo(map);
  console.log("It should have added");
  }
+
+
 
 
 

@@ -1,12 +1,82 @@
-#map { height: 65vh;
+
+
+
+
+#map-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust the width as needed */
+    height: 80%; /* Adjust the height as needed */
+}
+
+
+#map { height: 100%;
+    width: 100%;
 border: 2px solid black;
 border-radius: 10px;
     border-color: black;
  }
 
+ .description{
+    font-size: 26px;
+    font-family: "Oswald", sans-serif;
+    
+ }
+
+ @media screen and (max-width: 768px) {
+    .description {
+        font-size: 20px; /* Decrease font size for smaller screens */
+        
+        
+    }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+    .description {
+        font-size: 18px; /* Further decrease font size for very small screens */
+    }
+}
+
+#navprg{
+    font-family: "Frank Ruhl Libre", serif;
+
+}
+ .buildingimage{
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 95%;
+    height: 25%;
+    display: block;
+    margin:0 auto;
+    
+ }
+
+.watermarkschool{
+    position: absolute;
+    opacity: 0.25;
+    z-index: -1;
+    left: 30%;
+    top: 25%;
+
+}
+
+ .headingbanner{
+    background-color: #880c20;
+
+ }
+
 h1{
     text-align: center;
-    color: maroon;
+    color: white;
+   
+    font-size: 45px;
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    
 }
 
 #flag1 {
@@ -14,12 +84,15 @@ h1{
     top: 0;
     left: 0;
     z-index: -100;
-  background-color: maroon;  
-  height: 33vh;
+    background-image: url('../images/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  height: 100%;
   width: 100%;
 }
 
-#flag2{
+/* #flag2{
     position: absolute;
     top: 33vh;
     left: 0;
@@ -38,14 +111,78 @@ h1{
     background-color: blue;
     height: 34vh;
     width: 100%;
-}
+} */
 
 .popupimages{
     border: 2px solid black;
     border-radius: 10px;
     border-color: maroon;
+    width: 90%;
+    height: auto;
+    display: block;
+    margin:0 auto;
 }
 
-.marker{
-    color: beige;
+
+
+         /* Default popup styles */
+        .leaflet-popup-content {
+            font-size: 20px;
+            color: #880c20;  
+         }
+
+
+
+.custom-navbar{
+    background-color: rgb(136, 12, 32,0.96);
+
 }
+
+          
+
+/* //#e62143 */
+/* CSS */
+.button-44 {
+  background: #880c20;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,"Roboto Slab","Droid Serif","Segoe UI",system-ui,Arial,sans-serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 33.4929px;
+  padding: .8em 1em;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+  text-underline-offset: 1px;
+  transition: all .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 90%;
+  word-break: break-word;
+  border: 0;
+  margin:0 auto;
+}
+
+.button-44:active,
+.button-44:focus {
+  border-bottom-style: none;
+  border-color: #dadada;
+  box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
+  outline: 0;
+}
+
+.button-44:hover {
+  border-bottom-style: none;
+  border-color: #dadada;
+}
+
+
+
+  

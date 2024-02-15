@@ -7,7 +7,7 @@
     crossorigin=""/>
 
 
-    <link rel="icon" href="./images/prglogo.png">
+    <link rel="icon" href="./images/display.png">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 
@@ -190,7 +190,7 @@ let PerformanceInstitute = L.marker([-33.94186362464865, 18.864021447241385]).ad
  } else {
     setInterval(() => {
         navigator.geolocation.getCurrentPosition(getPosition)
-    }, 1000)
+    }, 5000)
     //Original interval = 5000
  }
 

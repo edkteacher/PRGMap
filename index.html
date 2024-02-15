@@ -7,7 +7,7 @@
     crossorigin=""/>
 
 
-    <link rel="icon" href="./images/display.png">
+    <link rel="icon" href="./images/prglogo.png">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 
@@ -26,51 +26,60 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+      <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
         <a class="navbar-brand" href="https://paulroos.co.za"><img src="./images/display.png" alt="Logo" height="40" 
             class="d-inline-block align-top">Paul Roos Gymnasium </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Locations
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" id="Nova" href="#">Prima Nova</a>
+                <a class="dropdown-item" id="Secunda" href="#">Secunda</a>
+                <a class="dropdown-item" id="AquaticCentre" href="#">Akwatiese Sentrum | Aquatic Centre</a>
+                <a class="dropdown-item" id="PerformanceInstitute" href="#">Johan J Ferreira Hoë-Prestasiesentrum |
+                    High Performance Centre</a>
+                <a class="dropdown-item" id="GardenOfRememberance" href="#">Tuin van Herinnering | Garden of Remembrance</a>
+                <a class="dropdown-item" id="MainBuilding" href="#">Paul Roos Hoofgebou | Main Building</a>
+                <a class="dropdown-item" id="Archives" href="#">Argief | Archives</a>
+                <a class="dropdown-item" id="Laboratory" href="#">Wetenskaplaboratorium | Science Laboratory</a>
+                <a class="dropdown-item" id="MatricGrounds" href="#">Matriekgronde | Matric Grounds</a>
+                <a class="dropdown-item" id="Roosinbosch" href="#">Roosinbosch</a>
+                <a class="dropdown-item" id="Splendidior" href="#">Splendidior</a>
+                <a class="dropdown-item" id="JapieKrige" href="#">Japie Krige Saal | Hall</a>
+                <a class="dropdown-item" id="MediaCentre" href="#">Mediasentrum | Media Centre</a>
+                <a class="dropdown-item" id="Madiba" href="#">iMadiba Projek | Project</a>
+                <a class="dropdown-item" id="IndoorCricket" href="#">Binnehuise krieketsentrum | Indoor Cricket Centre</a>
+                <a class="dropdown-item" id="PRGCentre" href="#">PRG Sentrum | Centre</a>
+                <a class="dropdown-item" id="Prima" href="#">Prima</a>
+                <a class="dropdown-item" id="Kamer14" href="#">Kamer 14</a>
+                <a class="dropdown-item" id="TennisCourts" href="#">Tennisbane | Tennis Courts</a>
+                <a class="dropdown-item" id="MusicBlock" href="#">Musiekblok | Music Block</a>
+                <a class="dropdown-item" id="OldBoys" href="#">Oudskoliere Kantoor | Old Boys' Office</a>
+                <a class="dropdown-item" id="LPR" href="#">LPR</a>
+                <a class="dropdown-item" id="Football" href="#">Sokkerveld | Football Field</a>
+                <a class="dropdown-item" id="Oval" href="#">Krieketveld | Cricket Oval</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" id="MarkotterComplex" href="#">Markötter Sportkompleks | Sporting Complex</a>
+                <a class="dropdown-item" id="IndoorRugby" href="#">Binnehuise Rugbyfasiliteit | Indoor Rugby Facility</a>
+                <a class="dropdown-item" id="Grandstand" href="#">Hoofpawiljoen | Grandstand</a>
+                <a class="dropdown-item" id="Clubhouse" href="#">Markötter Klubhuis | Clubhouse</a>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
       </nav>
-
-      <br>
 
     <!-- <h1>PAUL ROOS:</h1> -->
 
     <div id="flag1"></div>
-    <div id="flag2"></div>
 
-    <div id="flag3"></div>
 
 
 
@@ -90,6 +99,8 @@
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
@@ -120,7 +131,7 @@ var customPopupOptions = {
 
 
 // LPR GEBOU
-let LPRMarker = L.marker([-33.9419,18.8614]).addTo(map)
+let LPRMarker = L.marker([-33.94182964685178, 18.861304438828316]).addTo(map)
     .bindPopup("<h1> LPR Gebou | Building </h1> <hr>" +
     "<img class='popupimages' src='./images/LPR.jpg'/ height='150px'>" +
     " <br> <a href='./Pages/LPR.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
@@ -162,7 +173,7 @@ let PRGPrima = L.marker([-33.9405446163602, 18.86462771038144]).addTo(map)
 
 
 // Japie Krige Hall
-let JapieKrige = L.marker([-33.941798939373975, 18.86195393855647]).addTo(map)
+let JapieKrige = L.marker([-33.941750501037326, 18.861974715996322]).addTo(map)
 .bindPopup("<h1> Japie Krige Saal | Hall </h1>" + 
 "<img class='popupimages' src='./images/Japie Krige Saal.jpg'/ height='150px'>" +
 "<br> <a href='./Pages/JapieKrige.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
@@ -177,10 +188,123 @@ let Kamer14 = L.marker([-33.941671, 18.862312]).addTo(map)
 let PerformanceInstitute = L.marker([-33.94186362464865, 18.864021447241385]).addTo(map)
 .bindPopup("<h1> Johan J Ferreira Hoë-Prestasiesentrum | High Performance Centre  </h1>" + 
 "<img class='popupimages' src='./images/High Performance Centre inside.jpg'/ height='150px'>" +
-"<br> <a href='./Pages/PerformanceInstitute.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions)
+"<br> <a href='./Pages/PerformanceInstitute.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Roosinbosch
+let Roosinbosch = L.marker([-33.941947, 18.862127]).addTo(map)
+.bindPopup("<h1> Roosinbosch </h1>" + 
+"<img class='popupimages' src='./images/Roosinbosch.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Roosinbosch.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Aquatic Centre
+let AquaticCentre = L.marker([-33.94143471952359, 18.864695640303697]).addTo(map)
+.bindPopup("<h1> Akwatiese Sentrum | Aquatic Centre </h1>" + 
+"<img class='popupimages' src='./images/Akwatiese Sentrum.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/AquaticCentre.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
 
+//Garden of Remembrance - 
+let GardenOfRememberance = L.marker([-33.941384813178864, 18.862198048298538]).addTo(map)
+.bindPopup("<h1> Tuin van Herinnering | Garden of Remembrance </h1>" + 
+"<img class='popupimages' src='./images/Garden of Rememberance.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/GardenOfRememberance.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
+//Archives - 
+let Archives = L.marker([-33.94156067949534, 18.862572541152996]).addTo(map)
+.bindPopup("<h1> Argief | Archives </h1>" + 
+"<img class='popupimages' src='./images/Argief.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Archives.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+// Science Labs - 
+let ScienceLabs = L.marker([-33.941912272652914, 18.862617428173927]).addTo(map)
+.bindPopup("<h1> Wetenskaplaboratorium | Science Laboratory </h1>" + 
+"<img class='popupimages' src='./images/Science Lab.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/ScienceLab.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Matriek Gronde
+let MatriekGronde = L.marker([-33.94229381480469, 18.862422968369977]).addTo(map)
+.bindPopup("<h1> Matriekgronde | Matric Grounds </h1>" + 
+"<img class='popupimages' src='./images/Matriekgronde.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Matriekgronde.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Splendidior
+let Splendidior = L.marker([-33.94180817315318, 18.86207366090907]).addTo(map)
+.bindPopup("<h1> Splendidior </h1>" + 
+"<img class='popupimages' src='./images/Splendidior.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Splendidior.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+
+// Media Sentrum
+let MediaSentrum = L.marker([-33.94220652918249, 18.86185241958045]).addTo(map)
+.bindPopup("<h1> Mediasentrum | Media Centre </h1>" + 
+"<img class='popupimages' src='./images/Media Centre.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/MediaCentre.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Madiba Project
+let Madiba = L.marker([-33.94165442445776, 18.86169211771129]).addTo(map)
+.bindPopup("<h1> iMadiba Projek | Project </h1>" + 
+"<img class='popupimages' src='./images/Madiba Tronkkuns.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Madiba.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+// Indoor Cricket
+let IndoorCricket = L.marker([-33.94294071823358, 18.862143278767146]).addTo(map)
+.bindPopup("<h1> Binnehuise krieketsentrum | Indoor Cricket Centre </h1>" + 
+"<img class='popupimages' src='./images/Cricket Indoor (2).jpg'/ height='150px'>" +
+"<br> <a href='./Pages/IndoorCricket.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Markotter Sportkompleks 
+let MarkotterComplex = L.marker([-33.94245453098783, 18.854722759521497]).addTo(map)
+.bindPopup("<h1> Markötter Sportkompleks | Sporting Complex </h1>" + 
+"<img class='popupimages' src='./images/Markotter.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/MarkotterComplex.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Tennis Courts
+let TennisCourts = L.marker([-33.94243547452133, 18.86260840813169]).addTo(map)
+.bindPopup("<h1> Tennisbane | Tennis Courts </h1>" + 
+"<img class='popupimages' src='./images/Tennisbane.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/TennisCourts.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Music BLock
+let MusicBlock = L.marker([-33.94223026340032, 18.862172288604054]).addTo(map)
+.bindPopup("<h1> Musiekblok | Music Block</h1>" + 
+"<img class='popupimages' src='./images/Music Block.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/MusicBlock.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+// Old boys office
+let OldBoys = L.marker([-33.94200580660673, 18.861686628325952]).addTo(map)
+.bindPopup("<h1> Oudskoliere Kantoor | Old Boys' Office </h1>" + 
+"<img class='popupimages' src='./images/Oudskoliere.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/OldBoys.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Soccerfield
+let Soccerfield = L.marker([-33.942256199052004, 18.860546295357903]).addTo(map)
+.bindPopup("<h1> Sokkerveld | Football Field </h1>" + 
+"<img class='popupimages' src='./images/Football field.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Sokkerveld.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Krieketveld
+let Oval = L.marker([-33.943309574833954, 18.86168089368308]).addTo(map)
+.bindPopup("<h1> Krieketveld | Cricket Oval </h1>" + 
+"<img class='popupimages' src='./images/Oval.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Oval.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Indoor RUgby
+let IndoorRugby = L.marker([-33.94274683987574, 18.85607329475614]).addTo(map)
+.bindPopup("<h1> Binnehuise Rugbyfasiliteit | Indoor Rugby Facility </h1>" + 
+"<img class='popupimages' src='./images/Indoor.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/IndoorRugby.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Grandstand
+let Grandstand = L.marker([-33.942636076827206, 18.85578068927392]).addTo(map)
+.bindPopup("<h1> Hoofpawiljoen | Grandstand  </h1>" + 
+"<img class='popupimages' src='./images/Markotter Grandstand.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Grandstand.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//Club house
+let ClubHouse = L.marker([-33.941942051219264, 18.85592238000575]).addTo(map)
+.bindPopup("<h1> Markötter Klubhuis | Clubhouse </h1>" + 
+"<img class='popupimages' src='./images/Longroom.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/Clubhouse.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
 
 
@@ -209,16 +333,341 @@ let PerformanceInstitute = L.marker([-33.94186362464865, 18.864021447241385]).ad
     map.removeLayer(UserMarker)
  }
 
- if (UserRadius){
-    map.removeLayer(UserRadius)
- }
+//  if (UserRadius){
+//     map.removeLayer(UserRadius)
+//  }
 
   UserMarker = L.marker([lat,long], {icon: customIcon}).addTo(map);
-  UserRadius = L.circle([lat, long], {radius: accuracy}).addTo(map);
+//   UserRadius = L.circle([lat, long], {radius: accuracy}).addTo(map);
  console.log("It should have added");
  }
 
+//  document.querySelectorAll('.dropdown-item').forEach(item => {
+//     item.addEventListener('click', function() {
+//         // Get the coordinates of the marker
+//         let markerCoords = LPRMarker.getLatLng();
+        
+//         // Fly to the marker's location
+//         map.flyTo(markerCoords, 19); // '15' is the zoom level, adjust as needed
+        
+//         // Open the popup
+//         LPRMarker.openPopup();
+//     });
+// });
 
+document.getElementById('Nova').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = PRGNova.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    PRGNova.openPopup();
+});
+
+document.getElementById('Secunda').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = PRGSecunda.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    PRGSecunda.openPopup();
+});
+
+document.getElementById('AquaticCentre').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = AquaticCentre.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    AquaticCentre.openPopup();
+});
+
+document.getElementById('PerformanceInstitute').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = PerformanceInstitute.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    PerformanceInstitute.openPopup();
+});
+
+
+document.getElementById('GardenOfRememberance').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = GardenOfRememberance.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    GardenOfRememberance.openPopup();
+});
+
+
+document.getElementById('MainBuilding').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = HoofGebouMarker.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    HoofGebouMarker.openPopup();
+});
+
+
+document.getElementById('Archives').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = Archives.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    Archives.openPopup();
+});
+
+
+document.getElementById('Laboratory').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = ScienceLabs.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    ScienceLabs.openPopup();
+});
+
+
+document.getElementById('MatricGrounds').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = MatriekGronde.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    MatriekGronde.openPopup();
+});
+
+
+document.getElementById('Roosinbosch').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = Roosinbosch.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    Roosinbosch.openPopup();
+});
+
+document.getElementById('Splendidior').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = Splendidior.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    Splendidior.openPopup();
+});
+
+document.getElementById('JapieKrige').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = JapieKrige.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    JapieKrige.openPopup();
+});
+
+document.getElementById('MediaCentre').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = MediaSentrum.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    MediaSentrum.openPopup();
+});
+
+document.getElementById('Madiba').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = Madiba.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    Madiba.openPopup();
+});
+
+document.getElementById('IndoorCricket').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = IndoorCricket.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    IndoorCricket.openPopup();
+});
+
+document.getElementById('PRGCentre').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = PRGCentre.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    PRGCentre.openPopup();
+});
+
+document.getElementById('Prima').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = PRGPrima.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    PRGPrima.openPopup();
+});
+
+document.getElementById('Kamer14').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = Kamer14.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    Kamer14.openPopup();
+});
+
+document.getElementById('TennisCourts').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = TennisCourts.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    TennisCourts.openPopup();
+});
+
+document.getElementById('MusicBlock').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = MusicBlock.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    MusicBlock.openPopup();
+});
+
+document.getElementById('OldBoys').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = OldBoys.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    OldBoys.openPopup();
+});
+
+document.getElementById('LPR').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = LPRMarker.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    LPRMarker.openPopup();
+});
+
+document.getElementById('Football').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = Soccerfield.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    Soccerfield.openPopup();
+});
+
+document.getElementById('Oval').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = Oval.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    Oval.openPopup();
+});
+
+document.getElementById('MarkotterComplex').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = MarkotterComplex.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    MarkotterComplex.openPopup();
+});
+
+document.getElementById('IndoorRugby').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = IndoorRugby.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    IndoorRugby.openPopup();
+});
+
+document.getElementById('Grandstand').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = Grandstand.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    Grandstand.openPopup();
+});
+
+document.getElementById('Clubhouse').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = ClubHouse.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 15); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    ClubHouse.openPopup();
+});
 
 
 

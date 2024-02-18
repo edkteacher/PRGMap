@@ -28,11 +28,15 @@ border-radius: 10px;
     
  }
 
- .navbar-brand{
+ .navbar .navbar-brand{
     font-family: "Frank Ruhl Libre", serif;
-    font-size: 26px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    padding:10px 10px;
 
 }
+
 
 @media screen and (max-width: 768px) {
     .description {
@@ -149,8 +153,16 @@ h1{
 
 
 
+
 .custom-navbar{
     background-color: rgb(136, 12, 32,0.96);
+
+
+}
+
+.navbar-toggler{
+    height: 70px;
+    width: 90px;
 
 }
 

@@ -6,11 +6,11 @@
 
 #map-container {
     position: fixed;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%; /* Adjust the width as needed */
-    height: 80%; /* Adjust the height as needed */
+    width: 100%; /* Adjust the width as needed */
+    height: 90%; /* Adjust the height as needed */
     z-index: -1;
 }
 
@@ -28,7 +28,13 @@ border-radius: 10px;
     
  }
 
- @media screen and (max-width: 768px) {
+ .navbar-brand{
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: 26px;
+
+}
+
+@media screen and (max-width: 768px) {
     .description {
         font-size: 20px; /* Decrease font size for smaller screens */
         
@@ -43,10 +49,7 @@ border-radius: 10px;
     }
 }
 
-#navprg{
-    font-family: "Frank Ruhl Libre", serif;
 
-}
  .buildingimage{
     border-radius: 10px;
     border: 2px solid black;
@@ -149,6 +152,16 @@ h1{
 .custom-navbar{
     background-color: rgb(136, 12, 32,0.96);
 
+}
+
+.dropdown-menu a {
+    font-size: 24px;
+    font-family: "Oswald", sans-serif;
+}
+
+.nav-link{
+    font-size: 24px;
+    font-family: "Oswald", sans-serif;
 }
 
           

@@ -65,8 +65,7 @@ border-radius: 10px;
  }
 
  .watermarkcontainer{
-    display: flex;
-    justify-content: center;
+    position: relative;
  }
 
 
@@ -74,7 +73,9 @@ border-radius: 10px;
     position: absolute;
     opacity: 0.25;
     z-index: -1;
-    top: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
 

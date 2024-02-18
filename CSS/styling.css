@@ -32,8 +32,8 @@ border-radius: 10px;
     font-family: "Frank Ruhl Libre", serif;
     display: flex;
     align-items: center;
-    font-size: 24px;
-    padding:10px 10px;
+    font-size: 28px;
+    padding:10px 20px;
 
 }
 
@@ -161,8 +161,8 @@ h1{
 }
 
 .navbar-toggler{
-    height: 70px;
-    width: 90px;
+    height: 90px;
+    width: 120px;
 
 }
 

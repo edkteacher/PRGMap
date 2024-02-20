@@ -6,11 +6,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-let LPRMarker = L.marker([-33.9419,18.8614]).addTo(map)
+let LPRBuilding = L.marker([-33.9419,18.8614]).addTo(map)
     .bindPopup('<h1> LPR Building </h1> <p> This is the old Laerskool Paul Roos building');
 
 
-let HoofGebouMarker = L.marker([-33.941610,18.862611]).addTo(map)
+let PRGMainBuilding = L.marker([-33.941610,18.862611]).addTo(map)
 .bindPopup("<h1> Main Building </h1> <p> This is the main Paul Roos building </p> <img class='popupimages' src='./images/test.jpg'/ height='150px'>");
 
 
@@ -59,7 +59,7 @@ let PRGPrima = L.marker([-33.9405446163602, 18.86462771038144]).addTo(map)
 
   UserMarker = L.marker([lat,long]).addTo(map);
   UserRadius = L.circle([lat, long], {radius: accuracy}).addTo(map);
- console.log("It should have added");
+//  console.log("It should have added");
  }
 
 

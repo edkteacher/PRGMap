@@ -49,6 +49,7 @@
                 <a class="dropdown-item" id="MainBuilding" href="#">Paul Roos Hoofgebou | Main Building</a>
                 <a class="dropdown-item" id="Archives" href="#">Argief | Archives</a>
                 <a class="dropdown-item" id="Laboratory" href="#">Wetenskaplaboratorium | Science Laboratory</a>
+                <a class="dropdown-item" id="Esport" href="#">E-Sport Computer LAB | Rekenaar LAB</a>
                 <a class="dropdown-item" id="MatricGrounds" href="#">Matriekgronde | Matric Grounds</a>
                 <a class="dropdown-item" id="Roosinbosch" href="#">Roosinbosch</a>
                 <a class="dropdown-item" id="Splendidior" href="#">Splendidior</a>
@@ -254,7 +255,7 @@ let IndoorCricket = L.marker([-33.94294071823358, 18.862143278767146]).addTo(map
 "<br> <a href='./Pages/IndoorCricket.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
 //Markotter Sportkompleks 
-let MarkotterComplex = L.marker([-33.94245453098783, 18.854722759521497]).addTo(map)
+let MarkotterComplex = L.marker([-33.94215791748699, 18.857471559316547]).addTo(map)
 .bindPopup("<h1> Markötter Sportkompleks | Sporting Complex </h1>" + 
 "<img class='popupimages' src='./images/Markotter.jpg'/ height='150px'>" +
 "<br> <a href='./Pages/MarkotterComplex.html '><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
@@ -306,6 +307,12 @@ let ClubHouse = L.marker([-33.941942051219264, 18.85592238000575]).addTo(map)
 .bindPopup("<h1> Markötter Klubhuis | Clubhouse </h1>" + 
 "<img class='popupimages' src='./images/Longroom.jpg'/ height='150px'>" +
 "<br> <a href='./Pages/Clubhouse.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
+
+//E-sports computer labs
+let ComputerLab = L.marker([-33.94191086480097, 18.861495364491468]).addTo(map)
+.bindPopup("<h1> E-Sport Computer LAB | Rekenaar LAB  </h1>" + 
+"<img class='popupimages' src='./images/esports.jpg'/ height='150px'>" +
+"<br> <a href='./Pages/esports.html'><button class='button-44' role='button'>View Info</button></a>", customPopupOptions);
 
 
 
@@ -667,6 +674,18 @@ document.getElementById('Clubhouse').addEventListener('click', function() {
     
     // Open the popup
     ClubHouse.openPopup();
+});
+
+
+document.getElementById('Esport').addEventListener('click', function() {
+    // Get the coordinates of the marker
+    let markerCoords = ComputerLab.getLatLng();
+    
+    // Fly to the marker's location
+    map.flyTo(markerCoords, 19); // '15' is the zoom level, adjust as needed
+    
+    // Open the popup
+    ComputerLab.openPopup();
 });
 
 
